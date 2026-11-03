@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import { defaultData, type SiteData } from "./data";
 
-const KEY = "bhoomi-site-data-v1";
+const KEY = "bhoomi-site-data-v2";
 const AUTH = "bhoomi-admin-auth";
 export const ADMIN_EMAIL = "admin@bhoomibusiness.com";
 export const ADMIN_PASSWORD = "Admin@123";

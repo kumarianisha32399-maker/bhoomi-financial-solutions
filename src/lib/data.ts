@@ -108,12 +108,12 @@ export const defaultData = {
     { id: "q2", name: "Demo Enterprises", email: "demo@example.com", phone: "+91 90000 00001", businessType: "Private Limited Companies", service: "Accounting Services", message: "Looking for monthly bookkeeping and financial statement preparation.", status: "In Progress", date: "2026-10-29" },
   ],
   faqs: [
-    { q: "What accounting services do you provide?", a: "Bookkeeping, daily and monthly accounting, financial statement preparation, profit & loss and balance sheet preparation, accounts reconciliation and ongoing financial record management." },
-    { q: "Can you help with GST registration and return filing?", a: "Yes. We assist with GST registration, prepare GSTR-1 and GSTR-3B returns, perform input tax credit reconciliation and provide GST documentation and compliance support." },
-    { q: "Do you file income tax returns for individuals and businesses?", a: "We prepare and file individual ITRs, business ITRs and TDS returns, with tax computation and documentation support for each." },
-    { q: "Can you assist with company or LLP registration?", a: "We provide documentation and filing assistance for company and LLP registration, partnership firm documentation, MSME/Udyam registration, PAN and TAN applications, and annual compliance support." },
-    { q: "Do you handle payroll for small teams?", a: "Yes. We process salaries, maintain employee records, handle TDS on salary and assist with professional tax where applicable." },
-    { q: "How do you keep my financial data confidential?", a: "Your records are handled with strict confidentiality, shared only for the purpose of preparing your accounts and filings, and never used for any other purpose." },
+    { id: "f1", q: "What accounting services do you provide?", a: "Bookkeeping, daily and monthly accounting, financial statement preparation, profit & loss and balance sheet preparation, accounts reconciliation and ongoing financial record management." },
+    { id: "f2", q: "Can you help with GST registration and return filing?", a: "Yes. We assist with GST registration, prepare GSTR-1 and GSTR-3B returns, perform input tax credit reconciliation and provide GST documentation and compliance support." },
+    { id: "f3", q: "Do you file income tax returns for individuals and businesses?", a: "We prepare and file individual ITRs, business ITRs and TDS returns, with tax computation and documentation support for each." },
+    { id: "f4", q: "Can you assist with company or LLP registration?", a: "We provide documentation and filing assistance for company and LLP registration, partnership firm documentation, MSME/Udyam registration, PAN and TAN applications, and annual compliance support." },
+    { id: "f5", q: "Do you handle payroll for small teams?", a: "Yes. We process salaries, maintain employee records, handle TDS on salary and assist with professional tax where applicable." },
+    { id: "f6", q: "How do you keep my financial data confidential?", a: "Your records are handled with strict confidentiality, shared only for the purpose of preparing your accounts and filings, and never used for any other purpose." },
   ],
   updates: [{ id: "u1", text: "Demo content initialised", date: "2026-11-01" }],
 };
@@ -142,3 +142,6 @@ export const careers = [
   { title: "Documentation & Compliance Assistant", type: "Full-time", location: "Office location", exp: "0–2 years", desc: "Organise client financial records, prepare documentation and support registration filings." },
   { title: "Client Relationship Associate", type: "Full-time", location: "Office location", exp: "1–3 years", desc: "Coordinate with clients, track document requirements and keep engagements on schedule." },
 ];
+
+export const serviceOptions = ["Accounting Services", "GST Registration", "GST Return Filing", "Income Tax Return", "TDS Filing", "Company Registration", "Financial Documentation", "Payroll Services", "Other Services"];
+export const businessTypes = ["Individual / Salaried", "Freelancer / Professional", "Proprietorship", "Partnership Firm", "LLP", "Private Limited Company", "Startup", "Retail / Trading", "Manufacturing", "Other"];
