@@ -8,7 +8,7 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/services/$slug")({
   head: ({ params }) => {
     const t = `${params.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())} | Bhoomi Business Solutions`;
-    const d = "Professional CA, accounting and advisory services from Bhoomi Business Solutions.";
+    const d = "Accounting, GST, tax and documentation services from Bhoomi Business Solutions.";
     return { meta: [{ title: t }, { name: "description", content: d }, { property: "og:title", content: t }, { property: "og:description", content: d }, { property: "og:type", content: "article" }, { name: "twitter:card", content: "summary_large_image" }] };
   },
   component: ServicePage,
