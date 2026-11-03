@@ -8,3 +8,4 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+- Site content lives in src/lib/data.ts defaults, overridden by admin edits in localStorage via src/lib/store.tsx; there is no backend by client requirement.
