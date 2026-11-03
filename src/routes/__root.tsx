@@ -79,8 +79,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bhoomi Business Solutions | CA, Tax & Accounting Services" },
-      { name: "description", content: "Accounting, taxation, audit, compliance and business advisory services." },
+      { title: "Bhoomi Business Solutions – Accounting, GST, Taxation & Financial Services" },
+      { name: "description", content: "Accounting, GST, income tax, TDS, business registration and financial documentation services." },
     ],
     links: [
       {

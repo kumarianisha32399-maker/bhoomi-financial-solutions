@@ -6,10 +6,10 @@ import { AboutBlock, BlogGrid, ContactBlock, CtaBand, Faq, IndustriesGrid, Proce
 import { IndustryList } from "@/components/site/Gallery";
 
 export const Route = createFileRoute("/industries")({
-  head: () => meta("Industries We Serve", "Sector-specific accounting, taxation and advisory support for businesses across India."),
+  head: () => meta("Industries We Serve", "Accounting, GST and tax support for small businesses, startups, traders, manufacturers, LLPs, companies and professionals."),
   component: () => (
     <SiteLayout>
-      <PageHero title="Industries We Serve" crumb="Industries" image={u("1486406146926-c627a92ad1ab", 1920)} text="Sector-specific accounting, taxation and advisory support for businesses across India." />
+      <PageHero title="Industries We Serve" crumb="Industries" image={u("1486406146926-c627a92ad1ab", 1920)} text="Accounting, GST and tax support for small businesses, startups, traders, manufacturers, LLPs, companies and professionals." />
       <IndustryList /><CtaBand />
     </SiteLayout>
   ),

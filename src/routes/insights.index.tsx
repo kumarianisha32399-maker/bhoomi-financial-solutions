@@ -5,10 +5,10 @@ import { u } from "@/lib/data";
 import { AboutBlock, BlogGrid, ContactBlock, CtaBand, Faq, IndustriesGrid, ProcessSteps, ServicesGrid, Stats, Testimonials, WhyGrid } from "@/components/site/sections";
 
 export const Route = createFileRoute("/insights/")({
-  head: () => meta("Insights & Blogs", "Practical articles on taxation, accounting, compliance and business planning."),
+  head: () => meta("Insights & Blogs", "Financial knowledge on GST filing, ITR, bookkeeping, TDS compliance and year-end preparation."),
   component: () => (
     <SiteLayout>
-      <PageHero title="Insights &amp; Blogs" crumb="Insights" image={u("1434626881859-194d67b2b86f", 1920)} text="Practical articles on taxation, accounting, compliance and business planning." />
+      <PageHero title="Insights &amp; Blogs" crumb="Insights" image={u("1434626881859-194d67b2b86f", 1920)} text="Financial knowledge on GST filing, ITR, bookkeeping, TDS compliance and year-end preparation." />
       <BlogGrid />
     </SiteLayout>
   ),

@@ -67,7 +67,7 @@ export function Header() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <Link to="/contact" className="btn-navy hidden sm:inline-flex">Get Consultation</Link>
+            <Link to="/contact" className="btn-navy hidden sm:inline-flex">Contact Our Team</Link>
             <button className="grid h-11 w-11 place-items-center border xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -85,7 +85,7 @@ export function Header() {
                   {"dd" in n && sub === n.dd && <div className="pb-3 pl-4 text-sm text-muted-foreground [&_a]:block [&_a]:py-1.5">{ddItems(n.dd).map((i) => <div key={i.label}>{i.link}</div>)}</div>}
                 </div>
               ))}
-              <Link to="/contact" className="btn-navy mt-4 w-full justify-center">Get Consultation</Link>
+              <Link to="/contact" className="btn-navy mt-4 w-full justify-center">Contact Our Team</Link>
             </div>
           </nav>
         )}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { Briefcase, Factory, FileText, Image, Inbox, LayoutDashboard, LogOut, MessageSquare, Menu, Settings, Stamp, Globe, Trash2, Plus, Pencil, X } from "lucide-react";
+import { Briefcase, Factory, FileText, Image, Inbox, LayoutDashboard, LogOut, MessageSquare, Menu, Settings, Stamp, Globe, Trash2, Plus, Pencil, X, HelpCircle } from "lucide-react";
 import { Logo, meta } from "@/components/site/ui";
 import { auth, useStore } from "@/lib/store";
 import type { SiteData } from "@/lib/data";
@@ -15,7 +15,7 @@ type AnyObj = any;
 type F = { k: string; label: string; type?: "text" | "textarea" | "image" | "number" | "select" | "list"; options?: string[] };
 const tabs = [
   ["dashboard", "Dashboard", LayoutDashboard], ["website", "Website Content", Globe], ["services", "Services", Briefcase], ["industries", "Industries", Factory],
-  ["testimonials", "Testimonials", MessageSquare], ["blogs", "Blogs", FileText], ["gallery", "Gallery", Image], ["inquiries", "Inquiries", Inbox],
+  ["testimonials", "Testimonials", MessageSquare], ["blogs", "Blogs", FileText], ["faqs", "FAQs", HelpCircle], ["gallery", "Gallery", Image], ["inquiries", "Inquiries", Inbox],
   ["settings", "Website Settings", Settings], ["logo", "Logo Settings", Stamp],
 ] as const;
 type Tab = (typeof tabs)[number][0];
@@ -62,6 +62,7 @@ function Panel({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
     case "industries": return <ListEditor k="industries" title="title" fields={[{ k: "title", label: "Title" }, { k: "desc", label: "Description", type: "textarea" }, { k: "image", label: "Image", type: "image" }]} make={(v) => ({ ...v, id: v.id || slugify(v.title) })} />;
     case "testimonials": return <ListEditor k="testimonials" title="name" fields={[{ k: "name", label: "Client name" }, { k: "company", label: "Company" }, { k: "text", label: "Testimonial", type: "textarea" }, { k: "avatar", label: "Avatar", type: "image" }]} />;
     case "blogs": return <><BlogCats /><ListEditor k="blogs" title="title" fields={[{ k: "title", label: "Title" }, { k: "category", label: "Category", type: "select", options: data.blogCategories }, { k: "date", label: "Date (YYYY-MM-DD)" }, { k: "excerpt", label: "Short description", type: "textarea" }, { k: "body", label: "Article body", type: "textarea" }, { k: "image", label: "Image", type: "image" }]} make={(v) => ({ ...v, id: v.id || slugify(v.title), slug: v.slug || slugify(v.title), date: v.date || new Date().toISOString().slice(0, 10) })} /></>;
+    case "faqs": return <ListEditor k="faqs" title="q" fields={[{ k: "q", label: "Question" }, { k: "a", label: "Answer", type: "textarea" }]} />;
     case "gallery": return <ListEditor k="gallery" title="caption" fields={[{ k: "caption", label: "Description" }, { k: "image", label: "Image", type: "image" }]} />;
     case "inquiries": return <Inquiries />;
     case "settings": return <Settings_ />;
@@ -181,6 +182,7 @@ function Website() {
       <div><h2 className="mb-3 text-xl">Hero Slider</h2><ListEditor k="hero" title="title" fields={[{ k: "eyebrow", label: "Slide label" }, { k: "title", label: "Headline" }, { k: "text", label: "Description", type: "textarea" }, { k: "image", label: "Background image", type: "image" }]} /></div>
       <ObjEditor k="about" heading="About Section" fields={[{ k: "intro", label: "Introduction", type: "textarea" }, { k: "who", label: "Who We Are", type: "textarea" }, { k: "mission", label: "Mission", type: "textarea" }, { k: "vision", label: "Vision", type: "textarea" }, { k: "values", label: "Values", type: "textarea" }, { k: "image", label: "Image", type: "image" }]} />
       <div><h2 className="mb-3 text-xl">Business Highlights</h2><ListEditor k="highlights" title="title" fields={[{ k: "title", label: "Title" }, { k: "icon", label: "Icon name (lucide)" }, { k: "text", label: "Text", type: "textarea" }]} /></div>
+      <div><h2 className="mb-3 text-xl">Financial Care Cards</h2><ListEditor k="careFeatures" title="title" fields={[{ k: "title", label: "Title" }, { k: "icon", label: "Icon name (lucide)" }, { k: "text", label: "Text", type: "textarea" }]} /></div>
       <div><h2 className="mb-3 text-xl">Statistics (demo figures)</h2><ListEditor k="stats" title="label" fields={[{ k: "label", label: "Label" }, { k: "value", label: "Value", type: "number" }, { k: "suffix", label: "Suffix (e.g. +)" }]} /></div>
       <ObjEditor k="settings" heading="Footer Information" fields={[{ k: "footerAbout", label: "Footer company introduction", type: "textarea" }]} />
     </div>
@@ -215,7 +217,7 @@ function Inquiries() {
             <button className="text-sm font-bold text-primary" onClick={() => setView(view === q.id ? null : q.id)}>{view === q.id ? "Hide" : "View"}</button>
             <button aria-label="Delete inquiry" className="text-destructive" onClick={() => confirm("Delete this inquiry?") && update("inquiries", data.inquiries.filter((x) => x.id !== q.id), "Deleted inquiry")}><Trash2 className="h-4 w-4" /></button>
           </div>
-          {view === q.id && <div className="mt-4 border-t pt-4 text-sm"><p><b>Phone:</b> {q.phone}</p><p className="mt-2"><b>Message:</b> {q.message}</p></div>}
+          {view === q.id && <div className="mt-4 border-t pt-4 text-sm"><p><b>Phone:</b> {q.phone}</p>{"businessType" in q && <p className="mt-2"><b>Business Type:</b> {String(q.businessType)}</p>}<p className="mt-2"><b>Message:</b> {q.message}</p></div>}
         </Card>
       ))}
       {!data.inquiries.length && <Card>No inquiries.</Card>}

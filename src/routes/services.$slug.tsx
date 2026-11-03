@@ -46,7 +46,7 @@ function ServicePage() {
             <div className="bg-primary p-7 text-primary-foreground">
               <h3 className="text-xl text-primary-foreground">Need expert help?</h3>
               <p className="mt-2 text-sm text-primary-foreground/70">Talk to our team about your requirement.</p>
-              <Link to="/contact" className="btn-gold mt-5">Get Consultation</Link>
+              <Link to="/contact" className="btn-gold mt-5">Send an Inquiry</Link>
             </div>
           </aside>
         </div>
