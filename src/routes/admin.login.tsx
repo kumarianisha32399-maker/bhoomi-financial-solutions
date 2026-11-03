@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Lock } from "lucide-react";
 import { Img, Logo, meta } from "@/components/site/ui";
-import { auth } from "@/lib/store";
+import { ADMIN_EMAIL, ADMIN_PASSWORD, auth } from "@/lib/store";
 import { u } from "@/lib/data";
 
 export const Route = createFileRoute("/admin/login")({
