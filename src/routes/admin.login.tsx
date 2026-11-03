@@ -12,8 +12,8 @@ export const Route = createFileRoute("/admin/login")({
 
 function Login() {
   const nav = useNavigate();
-  const [email, setEmail] = useState("");
-  const [pw, setPw] = useState("");
+  const [email, setEmail] = useState(ADMIN_EMAIL);
+  const [pw, setPw] = useState(ADMIN_PASSWORD);
   const [err, setErr] = useState("");
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,6 +32,11 @@ function Login() {
           <div className="grid h-12 w-12 place-items-center bg-primary text-gold"><Lock className="h-5 w-5" /></div>
           <h1 className="mt-6 text-3xl">Admin Login</h1>
           <p className="mt-2 text-sm text-muted-foreground">Frontend demo authentication only — not production security.</p>
+          <div className="mt-4 border border-dashed border-border bg-surface p-3 text-xs">
+            <p className="font-bold uppercase tracking-wider text-primary">Demo credentials</p>
+            <p className="mt-1 text-muted-foreground">Email: <span className="font-medium text-foreground">{ADMIN_EMAIL}</span></p>
+            <p className="text-muted-foreground">Password: <span className="font-medium text-foreground">{ADMIN_PASSWORD}</span></p>
+          </div>
           <label className="mt-8 block text-xs font-bold uppercase tracking-wider text-primary">Email<input className="field mt-1.5" type="email" value={email} onChange={(e) => setEmail(e.target.value)} /></label>
           <label className="mt-5 block text-xs font-bold uppercase tracking-wider text-primary">Password<input className="field mt-1.5" type="password" value={pw} onChange={(e) => setPw(e.target.value)} /></label>
           {err && <p className="mt-4 text-sm text-destructive">{err}</p>}
